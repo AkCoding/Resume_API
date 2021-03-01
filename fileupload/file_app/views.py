@@ -1,17 +1,15 @@
-# Create your views here.
-from rest_framework.views import APIView
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from rest_framework import status
-from .serializers import FileSerializer
+from .serializers import UploadSerializer
 
-class FileView(APIView):
-  parser_classes = (MultiPartParser, FormParser)
+class UploadViewSet(ViewSet):
+    serializer_class = UploadSerializer
 
-  def post(self, request, *args, **kwargs):
-    file_serializer = FileSerializer(data=request.data)
-    if file_serializer.is_valid():
-      file_serializer.save()
-      return Response(file_serializer.data, status=status.HTTP_201_CREATED)
-    else:
-      return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def list(self, request):
+        return Response("GET API")
+
+    def create(self, request):
+        file_uploaded = request.FILES.get('file_uploaded')
+        content_type = file_uploaded.content_type
+        response = "POST API and you have uploaded a {} file".format(content_type)
+        return Response(response)
