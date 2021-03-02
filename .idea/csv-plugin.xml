@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/fileupload/file_app/models.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/fileupload/file_app/pdf.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/fileupload/file_app/serializers.py">
           <value>
             <Attribute>
@@ -25,6 +39,13 @@
           </value>
         </entry>
         <entry key="/fileupload/file_app/views.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/fileupload/fileupload/settings.py">
           <value>
             <Attribute>
               <option name="separator" value="," />

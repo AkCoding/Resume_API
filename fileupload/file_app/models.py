@@ -1,4 +1,4 @@
 from django.db import models
 
 class MyFile(models.Model):
-    file = models.FileField(upload_to ='media/')
+    file = models.FileField(upload_to ='file_app/media/')
