@@ -1,10 +1,6 @@
-from django.urls import path, include
-from rest_framework import routers
-from .views import UploadViewSet
-
-router = routers.DefaultRouter()
-router.register(r'upload', UploadViewSet, basename="upload")
+from django.conf.urls import url
+from .views import MyFileView
 
 urlpatterns = [
-    path('', include(router.urls)),
+  	url(r'^upload/$', MyFileView.as_view(), name='file-upload'),
 ]
